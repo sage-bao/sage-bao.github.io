@@ -2,24 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Analysis Blog</title>
+    <title>Telecom Customer Churn Survival Analysis</title>
 </head>
 <body>
-    <h1>Task (2) Data Analysis Report</h1>
+    <h1>Blog: Telecom Customer Churn Survival Analysis (Task 2)</h1>
 
-    <h2>1. LLM SQL Error Analysis</h2>
-    <p>In this task, we test the ability of LLM to generate SQL for telecom customer churn dataset.</p>
+    <h2>1. Background & Purpose</h2>
+    <p>Customer churn is critical for telecom companies. This analysis uses survival analysis to find key factors that affect customer retention and lifetime value.</p>
 
-    <p>1. The first SQL error: LLM called non-existing database fields, leading to column not found error.</p>
-    <p>2. The second SQL error: wrong field name and structural confusion of the telecom dataset.</p>
-    <p>3. The third SQL error: logical omission and incorrect screening conditions.</p>
+    <h2>2. Data & Workflow</h2>
+    <p>Data: 3351 records, 1556 churn events.</p>
+    <p>Methods: Kaplan-Meier, Cox model, AFT model, Customer Final Value (CFV).</p>
 
-    <h2>2. Kaplan-Meier Survival Analysis</h2>
-    <p>We use Kaplan-Meier method to analyze customer churn factors.</p>
-    <p>Key features such as online security and technical support show significant impact on user retention.</p>
-    <p>The contract feature did not show significant difference in survival curve comparison, so it was not ranked.</p>
+    <h2>3. Key Findings</h2>
+    <p>Top 5 significant features:</p>
+    <ul>
+        <li>OnlineBackup</li>
+        <li>OnlineSecurity</li>
+        <li>Partner</li>
+        <li>PaymentMethod</li>
+        <li>TechSupport</li>
+    </ul>
 
-    <h2>3. Overall Conclusion</h2>
-    <p>Large language models are prone to field hallucination and logical errors when generating SQL. Manual checking and correction are necessary for data analysis work.</p>
+    <h3>Figure 1: Feature significance ranking table</h3>
+    <p>OnlineBackup and OnlineSecurity are the most significant features.</p>
+
+    <h3>Figure 2 & 3: Survival curves by OnlineBackup and OnlineSecurity</h3>
+    <p>Customers with these services stay much longer.</p>
+
+    <h3>Figure 4 & 5: Cox model results and hazard ratios</h3>
+    <p>Value-added services reduce churn risk. Electronic check increases churn risk.</p>
+
+    <h3>Figure 6 & 7: Log-log survival plots</h3>
+    <p>Used to test model assumptions.</p>
+
+    <h3>Figure 8 & 9: AFT model results</h3>
+    <p>Value-added services extend customer lifetime.</p>
+
+    <h3>Figure 10: 36-month survival probability</h3>
+    <p>Good customers retain stably over time.</p>
+
+    <h3>Figure 11 & 12: Customer Final Value (CFV)</h3>
+    <p>High-value customers can reach over 900 yuan in 36 months.</p>
+
+    <h2>4. Conclusion</h2>
+    <ul>
+        <li>OnlineBackup, OnlineSecurity, TechSupport greatly improve retention.</li>
+        <li>Check payments lead to higher churn.</li>
+        <li>Promote value-added services and better payment methods to reduce churn.</li>
+    </ul>
 </body>
 </html>
